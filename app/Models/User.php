@@ -34,6 +34,11 @@ class User extends Authenticatable
        return  $this->belongsToMany(Role::class);
     }
 
+    public function photo(){
+    
+       return $this->morphOne(Photo::class, 'imageable');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
